@@ -14,4 +14,5 @@ module.exports = {
   '@libs': resolve(__dirname, './libs'),
   '@types': resolve(__dirname, './types'),
   '@locales': resolve(__dirname, './locales'),
+  '@constants': resolve(__dirname, './constants'),
 }
