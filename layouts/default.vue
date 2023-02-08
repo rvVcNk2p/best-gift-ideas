@@ -1,7 +1,8 @@
 <template>
   <div class="default-layout">
-    <UnauthenticatedTemplate />
-    <slot />
+    <UnauthenticatedTemplate>
+      <slot />
+    </UnauthenticatedTemplate>
   </div>
 </template>
 
