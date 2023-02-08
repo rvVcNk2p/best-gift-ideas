@@ -1,6 +1,18 @@
 // Follow this setup guide to integrate the Deno language server with your editor:
 // https://deno.land/manual/getting_started/setup_your_environment
 // This enables autocomplete, go to definition, etc.
+import { corsHeaders } from '../_shared/cors.ts'
+
+const createObj = (ideasArr: string[]) => {
+  return ideasArr.map((idea) => {
+    const [name, rating, estimatedPrice] = idea.split('||').map((i) => i.trim())
+    return {
+      name,
+      rating,
+      estimatedPrice,
+    }
+  })
+}
 
 const url = 'https://api.openai.com/v1/engines/text-davinci-003/completions'
 const headers = {
@@ -12,16 +24,27 @@ const headers = {
 import { serve } from 'https://deno.land/std@0.168.0/http/server.ts'
 
 serve(async (req) => {
+  // This is needed if you're planning to invoke your function from a browser.
+  if (req.method === 'OPTIONS') {
+    return new Response('ok', { headers: corsHeaders })
+  }
+
   const { prompt } = await req.json()
+
+  const extendedPrompt =
+    `Act as a creative gift advisor and generate cool and unique gift ideas from Amazon. Give me 10 unique gift ideas for the mentioned person. Do not repeat yourself; do not recommend multiple products from the same category. Rate the product on a 1-10 scale, depending on how good a match the product can make. Only recommand product that has min. 8 score points. Only the product name, rating and estimated price is required, nothing else. Example output format: {{name}} || {{score}}/10 || {{estimated price from}}{{estimated price to}}. Filter out course, class, online, subscription, guid, software, kit, session, mug, socks, drawing ideas. Person details:` +
+    prompt
+
+  console.log('== ', extendedPrompt)
 
   try {
     const result = await fetch(url, {
       method: 'POST',
       headers,
       body: JSON.stringify({
-        prompt,
+        prompt: extendedPrompt,
         max_tokens: 256,
-        temperature: 1,
+        temperature: 0.7,
         top_p: 1,
         frequency_penalty: 0,
         presence_penalty: 0,
@@ -35,18 +58,20 @@ serve(async (req) => {
       .then((json) => json)
 
     const trimmedResult = result.choices[0].text
-      .replace(`${prompt}`, '')
+      .replace(`${extendedPrompt}`, '')
       .split('\n')
       .filter((row: string) => row.trim().length > 0)
 
-    return new Response(JSON.stringify(trimmedResult), {
-      headers: { 'Content-Type': 'application/json' },
+    return new Response(JSON.stringify(createObj(trimmedResult)), {
+      headers: { ...corsHeaders, 'Content-Type': 'application/json' },
+      status: 200,
     })
   } catch (error: any) {
     const errorMessage = `Something went wrong: ${error}`
 
     return new Response(JSON.stringify({ error: errorMessage }), {
-      headers: { 'Content-Type': 'application/json' },
+      headers: { ...corsHeaders, 'Content-Type': 'application/json' },
+      status: 400,
     })
   }
 })
