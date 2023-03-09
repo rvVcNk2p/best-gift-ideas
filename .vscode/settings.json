@@ -3,5 +3,13 @@
   "deno.unstable": true,
   "editor.formatOnSave": true,
   "editor.defaultFormatter": "esbenp.prettier-vscode",
-  "deno.importMap": "./supabase/functions/import_map.json"
+  "deno.importMap": "./supabase/functions/import_map.json",
+  "i18n-ally.readonly": true,
+  "i18n-ally.namespace": true,
+  "i18n-ally.enabledParsers": ["ts"],
+  "i18n-ally.pathMatcher": "{namespaces}/{locale}.ts",
+  "i18n-ally.sourceLanguage": "hu",
+  "i18n-ally.displayLanguage": "hu",
+  "i18n-ally.localesPaths": ["locales"],
+  "i18n-ally.keystyle": "nested"
 }

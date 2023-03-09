@@ -1,17 +1,26 @@
 <template>
+  <LoadingPencil v-if="isLoading" />
   <button
+    v-else
     aria-label="Primary Button"
     type="button"
     class="button-base gradient-bg"
     :class="[disabled ? 'cursor-not-allowed invalid-state' : '']"
     style="flex-shrink: 0"
-    :disabled="disabled"
+    :disabled="disabled || isLoading"
   >
-    <span data-v-93aaa624="" data-v-fac1f164=""><slot /></span>
+    <span data-v-93aaa624="" data-v-fac1f164="">
+      <slot />
+    </span>
   </button>
 </template>
 
 <script lang="ts" setup>
+import { LoadingPencil } from '@atoms'
+import { useFetchStore } from '@stores'
+import { storeToRefs } from 'pinia'
+
+const { isLoading } = storeToRefs(useFetchStore())
 defineProps<{ disabled: boolean }>()
 </script>
 

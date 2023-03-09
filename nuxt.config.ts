@@ -9,5 +9,16 @@ export default defineNuxtConfig({
       autoprefixer: {},
     },
   },
+  modules: [
+    '@pinia/nuxt',
+    [
+      '@nuxtjs/google-fonts',
+      {
+        families: {
+          'M+PLUS+Rounded+1c': true,
+        },
+      },
+    ],
+  ],
   alias,
 })

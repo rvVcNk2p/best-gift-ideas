@@ -10,17 +10,25 @@
 
 <script lang="ts" setup>
 import { IdeaArea, IdeaList } from '@molecules'
+import { useFetchStore } from '@stores'
 import { useGetIdeas } from '@composables'
 import type { Idea } from '@types'
 import type { Ref } from 'vue'
 
 const { fetchIdeas } = useGetIdeas()
+const { setIsLoading } = useFetchStore()
 
 const generatedIdeas: Ref<Idea[]> = ref([])
 
 const generateIdeas = async (prompt: string) => {
+  setIsLoading(true)
   generatedIdeas.value = []
-  generatedIdeas.value = await fetchIdeas(prompt)
+  try {
+    generatedIdeas.value = await fetchIdeas(prompt)
+  } catch (error) {
+    console.log(`Something went wrong. Error message: ${error}`)
+  }
+  setIsLoading(false)
 }
 </script>
 

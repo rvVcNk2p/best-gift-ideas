@@ -1,5 +1,5 @@
 <template>
-  <div v-if="generatedIdeas.length > 0">
+  <div class="mt-10" v-if="generatedIdeas.length > 0">
     <ul
       role="list"
       class="grid grid-cols-1 gap-6 sm:grid-cols-2 lg:grid-cols-3"
