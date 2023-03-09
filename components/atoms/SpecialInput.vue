@@ -1,23 +1,23 @@
 <template>
-  <div class="grid grid-rows-2">
-    <p class="block text-md leading-8 font-medium text-gray-700">
-      {{ title }}
-    </p>
-    <input
-      type="text"
-      class="relative cursor-default rounded-md border border-gray-300 bg-white py-2 pl-3 pr-10 text-left shadow-sm focus:border-indigo-500 focus:outline-none focus:ring-1 focus:ring-indigo-500 sm:text-sm"
-      :value="modelValue"
-      @input="onChanged"
-      :placeholder="placeholder"
-    />
-  </div>
+	<div class="grid grid-rows-2">
+		<p class="text-md block font-medium leading-8 text-gray-700">
+			{{ title }}
+		</p>
+		<input
+			type="text"
+			class="relative cursor-default rounded-md border border-gray-300 bg-white py-2 pl-3 pr-10 text-left shadow-sm focus:border-indigo-500 focus:outline-none focus:ring-1 focus:ring-indigo-500 sm:text-sm"
+			:value="modelValue"
+			@input="onChanged"
+			:placeholder="placeholder"
+		/>
+	</div>
 </template>
 
 <script lang="ts" setup>
 defineProps<{
-  modelValue: string
-  title: string
-  placeholder?: string
+	modelValue: string
+	title: string
+	placeholder?: string
 }>()
 
 const emit = defineEmits(['update:modelValue'])

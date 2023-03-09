@@ -1,10 +1,10 @@
 <template>
-  <div class="unauthenticated">
-    <div class="unauthenticated__content">
-      <slot />
-    </div>
-  </div>
-  <Footer />
+	<div class="unauthenticated">
+		<div class="unauthenticated__content">
+			<slot />
+		</div>
+	</div>
+	<Footer />
 </template>
 
 <script lang="ts" setup>

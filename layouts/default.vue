@@ -1,9 +1,9 @@
 <template>
-  <div class="default-layout">
-    <UnauthenticatedTemplate>
-      <slot />
-    </UnauthenticatedTemplate>
-  </div>
+	<div class="default-layout">
+		<UnauthenticatedTemplate>
+			<slot />
+		</UnauthenticatedTemplate>
+	</div>
 </template>
 
 <script lang="ts" setup>

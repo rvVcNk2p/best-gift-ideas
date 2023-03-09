@@ -1,6 +1,6 @@
 <template>
-  <UnauthenticatedTemplate />
-  <slot />
+	<UnauthenticatedTemplate />
+	<slot />
 </template>
 
 <script setup lang="ts">

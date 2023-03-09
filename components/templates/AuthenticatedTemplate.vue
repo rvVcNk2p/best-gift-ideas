@@ -1,3 +1,3 @@
 <template>
-  <div class="authenticated-template"><slot /></div>
+	<div class="authenticated-template"><slot /></div>
 </template>
