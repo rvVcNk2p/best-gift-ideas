@@ -64,50 +64,52 @@
 					>
 				</div>
 			</nav>
-			<Dialog as="div" @close="mobileMenuOpen = false" :open="mobileMenuOpen">
-				<DialogPanel
-					class="fixed inset-0 z-10 overflow-y-auto bg-white px-6 py-6 lg:hidden"
-				>
-					<div class="flex items-center justify-between">
-						<a href="#" class="-m-1.5 p-1.5">
-							<span class="sr-only">Your Company</span>
-							<img
-								class="h-8"
-								src="https://tailwindui.com/img/logos/mark.svg?color=indigo&shade=600"
-								alt=""
-							/>
-						</a>
-						<button
-							type="button"
-							class="-m-2.5 rounded-md p-2.5 text-gray-700"
-							@click="mobileMenuOpen = false"
-						>
-							<span class="sr-only">Close menu</span>
-							<XMarkIcon class="h-6 w-6" aria-hidden="true" />
-						</button>
-					</div>
-					<div class="mt-6 flow-root">
-						<div class="-my-6 divide-y divide-gray-500/10">
-							<div class="space-y-2 py-6">
-								<a
-									v-for="item in navigation"
-									:key="item.name"
-									:href="item.href"
-									class="-mx-3 block rounded-lg py-2 px-3 text-base font-semibold leading-7 text-gray-900 hover:bg-gray-400/10"
-									>{{ item.name }}</a
-								>
-							</div>
-							<div class="py-6">
-								<a
-									href="#"
-									class="-mx-3 block rounded-lg py-2.5 px-3 text-base font-semibold leading-6 text-gray-900 hover:bg-gray-400/10"
-									>Log in</a
-								>
+			<ClientOnly>
+				<Dialog as="div" @close="mobileMenuOpen = false" :open="mobileMenuOpen">
+					<DialogPanel
+						class="fixed inset-0 z-10 overflow-y-auto bg-white px-6 py-6 lg:hidden"
+					>
+						<div class="flex items-center justify-between">
+							<a href="#" class="-m-1.5 p-1.5">
+								<span class="sr-only">Your Company</span>
+								<img
+									class="h-8"
+									src="https://tailwindui.com/img/logos/mark.svg?color=indigo&shade=600"
+									alt=""
+								/>
+							</a>
+							<button
+								type="button"
+								class="-m-2.5 rounded-md p-2.5 text-gray-700"
+								@click="mobileMenuOpen = false"
+							>
+								<span class="sr-only">Close menu</span>
+								<XMarkIcon class="h-6 w-6" aria-hidden="true" />
+							</button>
+						</div>
+						<div class="mt-6 flow-root">
+							<div class="-my-6 divide-y divide-gray-500/10">
+								<div class="space-y-2 py-6">
+									<a
+										v-for="item in navigation"
+										:key="item.name"
+										:href="item.href"
+										class="-mx-3 block rounded-lg py-2 px-3 text-base font-semibold leading-7 text-gray-900 hover:bg-gray-400/10"
+										>{{ item.name }}</a
+									>
+								</div>
+								<div class="py-6">
+									<a
+										href="#"
+										class="-mx-3 block rounded-lg py-2.5 px-3 text-base font-semibold leading-6 text-gray-900 hover:bg-gray-400/10"
+										>Log in</a
+									>
+								</div>
 							</div>
 						</div>
-					</div>
-				</DialogPanel>
-			</Dialog>
+					</DialogPanel>
+				</Dialog>
+			</ClientOnly>
 		</div>
 		<main>
 			<div class="relative pt-24 sm:pt-32">
@@ -116,14 +118,14 @@
 						<h1
 							class="text-4xl font-bold tracking-tight text-gray-900 sm:text-6xl"
 						>
-							Data to enrich your online business
+							Unwrap the Magic: Thoughtful and Unique Gift Ideas
 						</h1>
 						<p class="mt-6 text-lg leading-8 text-gray-600">
-							Anim aute id magna aliqua ad ad non deserunt sunt. Qui irure qui
-							lorem cupidatat commodo. Elit sunt amet fugiat veniam occaecat
-							fugiat aliqua.
+							Introducing Gifty.land, your go-to partner for exceptional gift
+							ideas. Our personalized and innovative recommendations cater to
+							everyone on your list, without costing you a penny.
 						</p>
-						<div class="mt-10 flex items-center justify-center gap-x-6">
+						<!-- <div class="mt-10 flex items-center justify-center gap-x-6">
 							<a
 								href="#"
 								class="rounded-md bg-indigo-600 px-3.5 py-2.5 text-sm font-semibold text-white shadow-sm hover:bg-indigo-500 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-indigo-600"
@@ -132,18 +134,20 @@
 							<a href="#" class="text-sm font-semibold leading-6 text-gray-900"
 								>Learn more <span aria-hidden="true">→</span></a
 							>
-						</div>
+						</div> -->
 					</div>
 					<div class="mt-16 flow-root sm:mt-24">
 						<div class="mx-auto max-w-6xl">
 							<IdeaArea @generate-ideas="generateIdeas" />
 							<IdeaList :generated-ideas="generatedIdeas" />
 							<FaqSection :faqs="faqs" />
+							<TestimonialSection />
+							<BlogSection />
 						</div>
 					</div>
 				</div>
 				<div
-					class="absolute inset-x-0 top-[calc(100%-13rem)] -z-10 transform-gpu overflow-hidden blur-3xl sm:top-[calc(100%-30rem)]"
+					class="absolute inset-x-0 top-[calc(100%-45rem)] -z-10 transform-gpu overflow-hidden blur-3xl"
 				>
 					<svg
 						class="relative left-[calc(50%+3rem)] h-full max-w-none -translate-x-1/2 sm:left-[calc(50%+36rem)]"
@@ -178,7 +182,13 @@
 import { ref } from 'vue'
 import { Dialog, DialogPanel } from '@headlessui/vue'
 import { Bars3Icon, XMarkIcon } from '@heroicons/vue/24/outline'
-import { IdeaArea, IdeaList, FaqSection } from '@molecules'
+import {
+	IdeaArea,
+	IdeaList,
+	FaqSection,
+	TestimonialSection,
+	BlogSection,
+} from '@molecules'
 import { useFetchStore } from '@stores'
 import { useGetIdeas } from '@composables'
 import type { Idea } from '@types'
@@ -203,10 +213,9 @@ const generateIdeas = async (prompt: string) => {
 }
 
 const navigation = [
-	{ name: 'Product', href: '#' },
-	{ name: 'Features', href: '#' },
-	{ name: 'Marketplace', href: '#' },
-	{ name: 'Company', href: '#' },
+	{ name: 'Home', href: '#' },
+	{ name: 'Contact Us', href: '#' },
+	{ name: 'Blog', href: '#' },
 ]
 
 const mobileMenuOpen = ref(false)

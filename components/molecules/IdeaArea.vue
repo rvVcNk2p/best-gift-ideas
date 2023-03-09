@@ -42,7 +42,7 @@
 						</div>
 					</div>
 
-					<div class="w-full bg-gray-50 px-4 py-3 text-right sm:px-6">
+					<div class="w-full px-4 py-3 text-right sm:px-6">
 						<SpecialButton @click="generateIdeas" :disabled="prompt.length < 5">
 							{{ t('globals.find_label') }}
 						</SpecialButton>
