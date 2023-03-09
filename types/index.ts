@@ -3,3 +3,6 @@ export type Idea = {
   rating: string
   description: string
 }
+
+export type FaqObjectKeys = 'question' | 'answer'
+export type FaqType = { [K in FaqObjectKeys]: string }

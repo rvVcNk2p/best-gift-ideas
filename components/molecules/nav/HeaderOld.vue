@@ -26,16 +26,6 @@
           <a
             href="#"
             class="text-base font-medium text-gray-500 hover:text-gray-900"
-            >Pricing</a
-          >
-          <a
-            href="#"
-            class="text-base font-medium text-gray-500 hover:text-gray-900"
-            >Docs</a
-          >
-          <a
-            href="#"
-            class="text-base font-medium text-gray-500 hover:text-gray-900"
             >Contact us</a
           >
           <a
@@ -69,7 +59,7 @@
     >
       <PopoverPanel
         focus
-        class="absolute inset-x-0 top-0 origin-top-right transform p-2 transition md:hidden"
+        class="absolute inset-x-0 top-0 origin-top-right transform p-2 transition md:hidden z-10"
       >
         <div
           class="divide-y-2 divide-gray-50 rounded-lg bg-white shadow-lg ring-1 ring-black ring-opacity-5"
@@ -94,19 +84,6 @@
             </div>
           </div>
           <div class="space-y-6 py-6 px-5">
-            <div class="grid grid-cols-2 gap-y-4 gap-x-8">
-              <a
-                href="#"
-                class="text-base font-medium text-gray-900 hover:text-gray-700"
-                >Pricing</a
-              >
-
-              <a
-                href="#"
-                class="text-base font-medium text-gray-900 hover:text-gray-700"
-                >Docs</a
-              >
-            </div>
             <div>
               <a
                 href="#"

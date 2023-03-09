@@ -3,40 +3,39 @@
     <div class="mt-10 md:col-span-2">
       <form action="#" method="POST">
         <div
-          class="shadow sm:overflow-hidden sm:rounded-md min-h-[300px] mb-2 flex flex-col justify-between items-center"
+          class="sm:overflow-hidden sm:rounded-md min-h-[300px] mb-2 flex flex-col justify-between items-center"
         >
-          <div class="w-full grid grid-cols-2 bg-white px-4 py-5 sm:p-6">
-            <div class="grid grid-rows-3">
+          <div class="w-full grid grid-cols-2 gap-10 bg-white px-4 py-5 sm:p-6">
+            <div class="grid grid-rows-3 gap-4">
               <SpecialSelect
                 v-model="fixedFormData.gender"
                 title="This special person is a:"
                 :options="genderOptions"
               />
               <SpecialInput
-                :label="genderLabel"
+                title="What is their relation to you?"
                 v-model="fixedFormData.relation"
                 placeholder="e.g. Nephew"
               />
               <SpecialSelect
                 v-model="fixedFormData.occasion"
-                title="for a special occasion, that is:"
+                title="What is the occasion?"
                 :options="occasionOptions"
               />
             </div>
 
-            <div>
+            <div class="">
               <label
                 for="comment"
-                class="block text-sm font-medium text-gray-700"
+                class="block text-md font-medium text-gray-700 leading-8"
                 >Add idea goes here:</label
               >
-              <div class="mt-2">
+              <div class="mt-2 flex flex-col h-full pb-10">
                 <textarea
                   v-model="prompt"
-                  rows="4"
                   name="comment"
                   id="comment"
-                  class="p-4 block w-full rounded-md border-green-300 shadow-sm focus:border-green-500 focus:ring-green-500 sm:text-sm bg-gray-100"
+                  class="p-4 block w-full h-full box-border rounded-md border-green-300 shadow-sm focus:border-green-500 focus:ring-green-500 sm:text-sm bg-gray-100"
                   placeholder="e.g. a 20-year-old who likes programming and hiking and is very energetic. Provide more information for a better suggestion."
                 ></textarea>
               </div>
@@ -79,11 +78,6 @@ const fixedFormData = reactive({
   gender: genderOptions[0],
   relation: '',
   occasion: occasionOptions[0],
-})
-
-const genderLabel = computed(() => {
-  const invocation = fixedFormData.gender.value === 'male' ? 'he' : 'she'
-  return `${invocation} is my`
 })
 
 watch(

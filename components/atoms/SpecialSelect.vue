@@ -4,12 +4,12 @@
       as="div"
       :model-value="modelValue"
       @update:model-value="onSelect"
-      class="flex justify-start items-center"
+      class="grid grid-rows-2"
     >
-      <ListboxLabel class="block text-sm font-medium text-gray-700 mr-2">{{
-        title
-      }}</ListboxLabel>
-      <div class="relative mt-1 min-w-fit">
+      <ListboxLabel class="text-md font-medium text-gray-700 leading-8">
+        {{ title }}
+      </ListboxLabel>
+      <div class="relative min-w-fit">
         <ListboxButton
           class="relative w-full cursor-default rounded-md border border-gray-300 bg-white py-2 pl-3 pr-10 text-left shadow-sm focus:border-indigo-500 focus:outline-none focus:ring-1 focus:ring-indigo-500 sm:text-sm"
         >
@@ -67,13 +67,11 @@
           </ListboxOptions>
         </transition>
       </div>
-      <p v-if="sufix" class="ml-1">{{ sufix }}</p>
     </Listbox>
   </div>
 </template>
 
 <script lang="ts" setup>
-import { ref } from 'vue'
 import {
   Listbox,
   ListboxButton,
@@ -81,7 +79,7 @@ import {
   ListboxOption,
   ListboxOptions,
 } from '@headlessui/vue'
-import { CheckIcon, ChevronUpDownIcon } from '@heroicons/vue/20/solid'
+import { ChevronUpDownIcon } from '@heroicons/vue/20/solid'
 
 type Option = {
   label: string
@@ -92,7 +90,6 @@ type SpecialInputType = {
   modelValue: Option | null
   title: string
   options: Option[]
-  sufix?: string
 }
 defineProps<SpecialInputType>()
 

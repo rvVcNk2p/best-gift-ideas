@@ -12,7 +12,7 @@ export enum AVAILABLE_LOCALES {
 export const usei18nStore = defineStore('i18n', {
   state: (): i18nState => {
     return {
-      locale: AVAILABLE_LOCALES.HU,
+      locale: AVAILABLE_LOCALES.EN,
     }
   },
   actions: {
