@@ -23,7 +23,7 @@ const headers = {
 
 import { serve } from 'https://deno.land/std@0.168.0/http/server.ts'
 
-serve(async (req) => {
+serve(async (req: Request) => {
 	// This is needed if you're planning to invoke your function from a browser.
 	if (req.method === 'OPTIONS') {
 		return new Response('ok', { headers: corsHeaders })
@@ -31,9 +31,18 @@ serve(async (req) => {
 
 	const { prompt } = await req.json()
 
-	const extendedPrompt =
-		`Act as a creative gift advisor and generate cool and unique gift ideas from Amazon. Give me 10 unique gift ideas for the mentioned person. Do not repeat yourself; do not recommend multiple products from the same category. Rate the product on a 1-10 scale, depending on how good a match the product can make. Only recommand product that has min. 8 score points. Only the product name, rating and description is required, nothing else. Description need to be written as a sales text and maximum 35 words. Name maximum length is 5 words. Example output format: {{name}} || {{score}}/10 || {{description}}. Filter out course, class, online, subscription, guid, software, kit, session, mug, socks, drawing ideas. Person details: ` +
-		prompt
+	const extendedPrompt = `
+		Act as a creative gift advisor and generate cool and unique gift ideas from Amazon. 
+		Give me 10 unique gift ideas for the mentioned person. 
+		Do not repeat yourself; do not recommend multiple products from the same category. 
+		Rate the product on a 1-10 scale, depending on how good a match the product can make. 
+		Only recommand product that has min. 8 score points. 
+		Only the product name, rating and description is required, nothing else. 
+		Description need to be written as a sales text, minimum 30 words and maximum 35 words. Name maximum length is 5 words. 
+		Example output format: {{name}} || {{score}}/10 || {{description}}. 
+		Filter out course, class, online, subscription, guid, software, kit, session, mug, socks, drawing ideas. 
+		Person details: ${prompt}
+	`
 
 	console.log('== ', extendedPrompt)
 

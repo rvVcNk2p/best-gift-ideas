@@ -6,7 +6,7 @@
 			@update:model-value="onSelect"
 			class="grid grid-rows-2"
 		>
-			<ListboxLabel class="text-md font-medium leading-8 text-gray-700">
+			<ListboxLabel class="text-lg font-medium leading-8 text-gray-700">
 				{{ title }}
 			</ListboxLabel>
 			<div class="relative min-w-fit">

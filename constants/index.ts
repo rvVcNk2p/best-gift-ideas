@@ -38,4 +38,5 @@ export const occasionOptions = [
 export const genderOptions = [
 	{ label: 'Woman', value: 'woman' },
 	{ label: 'Male', value: 'male' },
+	{ label: 'Custom', value: 'non-binary-person' },
 ]

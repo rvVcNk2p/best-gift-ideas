@@ -1,6 +1,6 @@
 <template>
 	<div class="grid grid-rows-2">
-		<p class="text-md block font-medium leading-8 text-gray-700">
+		<p class="block text-lg font-medium leading-8 text-gray-700">
 			{{ title }}
 		</p>
 		<input
