@@ -725,6 +725,11 @@
     "@unhead/schema" "1.0.20"
     "hookable" "^5.4.2"
 
+"@vee-validate/zod@^4.7.4":
+  "integrity" "sha512-AyOgGchUaElroaArwyPnSgftp6Ho74dzEr72qxQw6/J+BRVh7UpshkTeHAf6Tvwg4hyxIW4veurOB0yWuqYSyA=="
+  "resolved" "https://registry.npmjs.org/@vee-validate/zod/-/zod-4.7.4.tgz"
+  "version" "4.7.4"
+
 "@vercel/nft@^0.22.6":
   "integrity" "sha512-gTsFnnT4mGxodr4AUlW3/urY+8JKKB452LwF3m477RFUJTAaDmcz2JqFuInzvdybYIeyIv1sSONEJxsxnbQ5JQ=="
   "resolved" "https://registry.npmjs.org/@vercel/nft/-/nft-0.22.6.tgz"
@@ -818,7 +823,7 @@
     "@vue/compiler-dom" "3.2.47"
     "@vue/shared" "3.2.47"
 
-"@vue/devtools-api@^6.2.1", "@vue/devtools-api@^6.4.5":
+"@vue/devtools-api@^6.1.4", "@vue/devtools-api@^6.2.1", "@vue/devtools-api@^6.4.5":
   "integrity" "sha512-o9KfBeaBmCKl10usN4crU53fYtC1r7jJwdGKjPT24t348rHxgfpZ0xL3Xm/gLUYnc0oTp8LAmrxOeLyu6tbk2Q=="
   "resolved" "https://registry.npmjs.org/@vue/devtools-api/-/devtools-api-6.5.0.tgz"
   "version" "6.5.0"
@@ -4235,6 +4240,13 @@
   "resolved" "https://registry.npmjs.org/util-deprecate/-/util-deprecate-1.0.2.tgz"
   "version" "1.0.2"
 
+"vee-validate@^4.4.0", "vee-validate@^4.7.4":
+  "integrity" "sha512-pfhKluYimYvSQIiFoIY29NAgl0j24DqPsodlCny/NlOrYbougdjbL1C9yYqmba4Ka3YUY6vOZ0GE2wcwMsKQ5A=="
+  "resolved" "https://registry.npmjs.org/vee-validate/-/vee-validate-4.7.4.tgz"
+  "version" "4.7.4"
+  dependencies:
+    "@vue/devtools-api" "^6.1.4"
+
 "vite-node@^0.28.3":
   "integrity" "sha512-KM0Q0uSG/xHHKOJvVHc5xDBabgt0l70y7/lWTR7Q0pR5/MrYxadT+y32cJOE65FfjGmJgxpVEEY+69btJgcXOQ=="
   "resolved" "https://registry.npmjs.org/vite-node/-/vite-node-0.28.4.tgz"
@@ -4507,3 +4519,8 @@
     "archiver-utils" "^2.1.0"
     "compress-commons" "^4.1.0"
     "readable-stream" "^3.6.0"
+
+"zod@^3.1.0", "zod@^3.21.4":
+  "integrity" "sha512-m46AKbrzKVzOzs/DZgVnG5H55N1sv1M8qZU3A8RIKbs3mrACDNeIOeilDymVb2HdmP8uwshOCF4uJ8uM9rCqJw=="
+  "resolved" "https://registry.npmjs.org/zod/-/zod-3.21.4.tgz"
+  "version" "3.21.4"
