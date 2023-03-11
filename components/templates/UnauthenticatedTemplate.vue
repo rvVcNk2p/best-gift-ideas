@@ -1,14 +1,19 @@
 <template>
 	<div class="unauthenticated">
-		<div class="unauthenticated__content">
+		<Header />
+		<main class="unauthenticated__content">
 			<slot />
-		</div>
+		</main>
 	</div>
 	<Footer />
 </template>
 
 <script lang="ts" setup>
-import { Footer } from '@molecules'
+import { Footer, Header } from '@molecules'
 </script>
 
-<style lang="scss" scoped></style>
+<style lang="scss" scoped>
+.unauthenticated {
+	@apply isolate bg-white;
+}
+</style>
