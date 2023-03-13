@@ -12,7 +12,7 @@ export default defineEventHandler(async (event) => {
 	// const filePath = resolve('node_modules/.cache/.sitemap/sitemap.xml')
 
 	const sitemap = new SitemapStream({
-		hostname: 'https://example.com', // TODO: Rename it
+		hostname: 'https://gifty.land',
 	})
 
 	for (const doc of docs) {
