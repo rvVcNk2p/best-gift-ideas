@@ -9,7 +9,7 @@ export default defineEventHandler(async (event) => {
 	// https://content.nuxtjs.org/guide/recipes/sitemap#server-route
 	const docs = await serverQueryContent(event).find()
 
-	// const filePath = resolve('node_modules/.cache/.sitemap/sitemap.xml')
+	const filePath = resolve('node_modules/.cache/.sitemap/sitemap.xml')
 
 	const sitemap = new SitemapStream({
 		hostname: 'https://gifty.land',
@@ -22,9 +22,7 @@ export default defineEventHandler(async (event) => {
 		})
 	}
 
-	sitemap.end()
-
-	// createReadStream(filePath).pipe(new XMLToSitemapItemStream()).pipe(sitemap)
+	createReadStream(filePath).pipe(new XMLToSitemapItemStream()).pipe(sitemap)
 
 	return streamToPromise(sitemap)
 })

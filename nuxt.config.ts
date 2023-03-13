@@ -29,8 +29,9 @@ export default defineNuxtConfig({
 	sitemap: {
 		hostname: 'https://gifty.land/',
 		mapPages: (page: NuxtPage) => {
-			if (page.path === '/blog/:slug') {
-				return null // this is done through the ~/server/routes/sitemap.xml.ts file which actually exposes the file as a public asset
+			if (page.path === '/blog/:slug(.*)*') {
+				// This is done through the ~/server/routes/sitemap.xml.ts file which actually exposes the file as a public asset
+				return null
 			} else return { url: page.path }
 		},
 	},
@@ -38,9 +39,9 @@ export default defineNuxtConfig({
 		'/blog/**': { swr: true },
 		'/admin/**': { ssr: false },
 	},
-	nitro: {
-		prerender: {
-			routes: ['/sitemap.xml'],
+	hooks: {
+		'prerender:routes'(ctx) {
+			ctx.routes.add('/sitemap.xml')
 		},
 	},
 	alias,
