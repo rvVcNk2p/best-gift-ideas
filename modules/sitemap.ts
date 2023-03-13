@@ -5,6 +5,10 @@ import type { NuxtPage } from '@nuxt/schema'
 import { SitemapStream, streamToPromise, SitemapItemLoose } from 'sitemap'
 import { defineNuxtModule, createResolver } from '@nuxt/kit'
 
+// NOTE: Thank you for guidance!
+// https://github.com/tex0l/tex0l.github.io
+// https://github.com/benoitdemaegdt/nuxt3-sitemap
+
 async function createSitemapFile(sitemap: string, filepath: string) {
 	const dirPath = dirname(filepath)
 	await mkdirSync(dirPath, { recursive: true })
