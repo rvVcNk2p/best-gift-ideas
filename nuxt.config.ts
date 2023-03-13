@@ -1,4 +1,5 @@
 // https://nuxt.com/docs/api/configuration/nuxt-config
+import type { NuxtPage } from '@nuxt/schema'
 import alias from './pathAliases'
 
 export default defineNuxtConfig({
@@ -20,9 +21,18 @@ export default defineNuxtConfig({
 				},
 			},
 		],
+		'./modules/sitemap',
 	],
 	content: {
 		// https://content.nuxtjs.org/api/configuration
+	},
+	sitemap: {
+		hostname: 'https://gifty.land/',
+		mapPages: (page: NuxtPage) => {
+			if (page.path === '/blog/:slug') {
+				return null // this is done through the ~/server/routes/sitemap.xml.ts file which actually exposes the file as a public asset
+			} else return { url: page.path }
+		},
 	},
 	routeRules: {
 		'/blog/**': { swr: true },
