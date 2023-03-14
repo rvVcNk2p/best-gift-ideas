@@ -47,7 +47,7 @@
 						/>
 					</div>
 
-					<SpecialButton @click="onSubmit" :disabled="isSubmitting">
+					<SpecialButton :disabled="isSubmitting" @submit="onSubmit">
 						<template #prefix>
 							<button
 								@click.prevent="resetForm()"
@@ -120,7 +120,7 @@ const validationSchema = toFormValidator(
 	}),
 )
 
-const { handleSubmit, errors, isSubmitting, resetForm, meta } = useForm({
+const { handleSubmit, errors, isSubmitting, resetForm } = useForm({
 	initialValues: {
 		relation: '',
 		additionalInformation: '',

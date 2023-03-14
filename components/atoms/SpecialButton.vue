@@ -12,6 +12,7 @@
 			:class="[disabled ? 'invalid-state cursor-not-allowed' : '']"
 			style="flex-shrink: 0"
 			:disabled="disabled || isLoading"
+			@click="$emit('submit')"
 		>
 			<slot name="label" />
 		</button>
@@ -25,6 +26,7 @@ import { storeToRefs } from 'pinia'
 
 const { isLoading } = storeToRefs(useFetchStore())
 defineProps<{ disabled: boolean }>()
+defineEmits(['submit'])
 </script>
 
 <style lang="scss">
