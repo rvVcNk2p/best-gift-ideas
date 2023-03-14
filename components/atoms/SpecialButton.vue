@@ -1,18 +1,21 @@
 <template>
-	<LoadingPencil v-if="isLoading" />
-	<button
+	<LoadingPencil v-if="isLoading" class="mt-16 mb-4" />
+	<div
+		class="flex w-full items-center justify-end py-3 pl-4 text-right sm:px-4"
 		v-else
-		aria-label="Primary Button"
-		type="button"
-		class="button-base gradient-bg"
-		:class="[disabled ? 'invalid-state cursor-not-allowed' : '']"
-		style="flex-shrink: 0"
-		:disabled="disabled || isLoading"
 	>
-		<span data-v-93aaa624="" data-v-fac1f164="">
-			<slot />
-		</span>
-	</button>
+		<slot name="prefix" />
+		<button
+			aria-label="Primary Button"
+			type="button"
+			class="button-base gradient-bg !w-[90%] !px-12 md:!w-fit"
+			:class="[disabled ? 'invalid-state cursor-not-allowed' : '']"
+			style="flex-shrink: 0"
+			:disabled="disabled || isLoading"
+		>
+			<slot name="label" />
+		</button>
+	</div>
 </template>
 
 <script lang="ts" setup>

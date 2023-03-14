@@ -1,6 +1,8 @@
 // Follow this setup guide to integrate the Deno language server with your editor:
 // https://deno.land/manual/getting_started/setup_your_environment
 // This enables autocomplete, go to definition, etc.
+
+// https://app.supabase.com/project/umjdmeqzitwrcnmmjaxf/functions/gifty-land-generate-ideas/details
 import { corsHeaders } from '../_shared/cors.ts'
 
 const createObj = (ideasArr: string[]) => {
@@ -32,16 +34,16 @@ serve(async (req: Request) => {
 	const { prompt } = await req.json()
 
 	const extendedPrompt = `
+		Person details: ${prompt}
 		Act as a creative gift advisor and generate cool and unique gift ideas from Amazon. 
-		Give me 10 unique gift ideas for the mentioned person. 
+		Give me 8 unique gift ideas for the mentioned person. 
 		Do not repeat yourself; do not recommend multiple products from the same category. 
 		Rate the product on a 1-10 scale, depending on how good a match the product can make. 
 		Only recommand product that has min. 8 score points. 
 		Only the product name, rating and description is required, nothing else. 
-		Description need to be written as a sales text, minimum 30 words and maximum 35 words. Name maximum length is 5 words. 
+		Description need to be written as a sales text, minimum 15 words and maximum 20 words. Name maximum length is 5 words. 
 		Example output format: {{name}} || {{score}}/10 || {{description}}. 
 		Filter out course, class, online, subscription, guid, software, kit, session, mug, socks, drawing ideas. 
-		Person details: ${prompt}
 	`
 
 	console.log('== ', extendedPrompt)

@@ -6,7 +6,7 @@
 					class="mb-2 flex min-h-[300px] flex-col items-center justify-between sm:overflow-hidden sm:rounded-md"
 				>
 					<div
-						class="grid w-full grid-cols-1 gap-10 bg-white px-4 py-5 sm:p-6 md:grid-cols-2"
+						class="grid w-full grid-cols-1 gap-10 bg-white py-5 pt-5 pb-10 sm:p-6 sm:px-4 md:grid-cols-2"
 					>
 						<div class="flex flex-col gap-4">
 							<SpecialSelect
@@ -47,12 +47,22 @@
 						/>
 					</div>
 
-					<div class="w-full px-4 py-3 text-right sm:px-6">
-						<button @click.prevent="resetForm()" class="mr-4">Reset</button>
-						<SpecialButton @click="onSubmit" :disabled="isSubmitting">
+					<SpecialButton @click="onSubmit" :disabled="isSubmitting">
+						<template #prefix>
+							<button
+								@click.prevent="resetForm()"
+								class="mr-4 block w-10 md:mr-0"
+							>
+								<ArrowPathRoundedSquareIcon
+									class="h-6 w-6"
+									aria-hidden="true"
+								/>
+							</button>
+						</template>
+						<template #label>
 							{{ t('globals.find_label') }}
-						</SpecialButton>
-					</div>
+						</template>
+					</SpecialButton>
 				</div>
 			</form>
 		</div>
@@ -71,6 +81,7 @@ import { useI18n } from 'vue-i18n'
 import { useField, useForm } from 'vee-validate'
 import { toFormValidator } from '@vee-validate/zod'
 import * as zod from 'zod'
+import { ArrowPathRoundedSquareIcon } from '@heroicons/vue/24/outline'
 
 const { t } = useI18n()
 
@@ -78,7 +89,7 @@ const emits = defineEmits(['generate-ideas'])
 
 const prompt = computed<string>(() => {
 	let innerPrompt = `Is a ${fixedFormData.gender.label}. The ocasion why I need a gigt idea: ${fixedFormData.occasion.label}.`
-	if (relation) innerPrompt += ` Our relationship: ${relation}.`
+	if (relation) innerPrompt += ` Our relationship: ${relation.value}.`
 	if (additionalInformation.value)
 		innerPrompt += ` Extra information about the person: ${additionalInformation.value}`
 	return innerPrompt
@@ -92,8 +103,7 @@ const fixedFormData = reactive({
 const onSubmit = async () => {
 	await validate()
 	if (!Object.keys(errors.value).length) {
-		console.log('NO ERRORS, GOOD TO GO!')
-		// emits('generate-ideas', prompt.value)
+		emits('generate-ideas', prompt.value)
 	}
 }
 
@@ -123,7 +133,7 @@ const { value: additionalInformation, meta: additionalInformationsMeta } =
 	useField<string>('additionalInformation')
 
 const validate = handleSubmit((values) => {
-	console.log(values)
+	// console.log(values)
 })
 </script>
 
