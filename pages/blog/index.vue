@@ -23,10 +23,12 @@
 							<div
 								class="width-full flex aspect-video items-center justify-center overflow-hidden"
 							>
-								<img
-									preload
+								<nuxt-img
+									class="h-auto w-auto"
 									v-if="article.image"
 									:src="'/img/' + article.image"
+									:alt="article.image"
+									loading="lazy"
 								/>
 							</div>
 							<div class="width-full relative aspect-video overflow-hidden p-6">
@@ -77,6 +79,15 @@ const query = {
 }
 
 useHead({
-	title: 'Blog',
+	title: 'Gifty.land | Blog',
+	htmlAttrs: {
+		lang: 'en',
+	},
+	meta: [
+		{
+			name: 'description',
+			content: 'The blog section of Gifty.land',
+		},
+	],
 })
 </script>

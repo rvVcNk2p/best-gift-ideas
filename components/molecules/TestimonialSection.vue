@@ -66,10 +66,11 @@
 					<figcaption
 						class="flex items-center gap-x-4 border-t border-gray-900/10 py-4 px-6"
 					>
-						<img
+						<nuxt-img
 							class="h-10 w-10 flex-none rounded-full bg-gray-50"
 							:src="featuredTestimonial.author.imageUrl"
 							alt=""
+							loading="lazy"
 						/>
 						<div class="flex-auto">
 							<div class="font-semibold">
@@ -112,10 +113,11 @@
 								<p>{{ `“${testimonial.body}”` }}</p>
 							</blockquote>
 							<figcaption class="mt-6 flex items-center gap-x-4">
-								<img
+								<nuxt-img
 									class="h-10 w-10 rounded-full bg-gray-50"
 									:src="testimonial.author.imageUrl"
 									alt=""
+									loading="lazy"
 								/>
 								<div>
 									<div class="font-semibold">{{ testimonial.author.name }}</div>

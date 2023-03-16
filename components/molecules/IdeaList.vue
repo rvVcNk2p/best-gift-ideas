@@ -60,7 +60,7 @@
 </template>
 
 <script lang="ts" setup>
-import { EyeIcon } from '@heroicons/vue/20/solid'
+import EyeIcon from '@heroicons/vue/20/solid/EyeIcon'
 import type { Idea } from '@types'
 
 defineProps<{ generatedIdeas: Idea[] }>()

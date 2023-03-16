@@ -79,7 +79,7 @@ import {
 	ListboxOption,
 	ListboxOptions,
 } from '@headlessui/vue'
-import { ChevronUpDownIcon } from '@heroicons/vue/20/solid'
+import ChevronUpDownIcon from '@heroicons/vue/20/solid/ChevronUpDownIcon'
 
 type Option = {
 	label: string

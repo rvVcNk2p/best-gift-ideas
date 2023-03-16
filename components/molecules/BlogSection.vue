@@ -19,10 +19,11 @@
 					:key="post.id"
 					class="relative isolate flex flex-col justify-end overflow-hidden rounded-2xl bg-gray-900 px-8 pb-8 pt-80 sm:pt-48 lg:pt-80"
 				>
-					<img
+					<nuxt-img
 						:src="post.imageUrl"
 						alt=""
 						class="absolute inset-0 -z-10 h-full w-full object-cover"
+						loading="lazy"
 					/>
 					<div
 						class="absolute inset-0 -z-10 bg-gradient-to-t from-gray-900 via-gray-900/40"
@@ -43,10 +44,11 @@
 								<circle cx="1" cy="1" r="1" />
 							</svg>
 							<div class="flex gap-x-2.5">
-								<img
+								<nuxt-img
 									:src="post.author.imageUrl"
 									alt=""
 									class="h-6 w-6 flex-none rounded-full bg-white/10"
+									loading="lazy"
 								/>
 								{{ post.author.name }}
 							</div>
@@ -71,41 +73,12 @@ const posts = [
 		title:
 			'Top 10 Gift Ideas for the Stylish and Trendy 20-Year-Old Woman in Your Life',
 		href: '/blog/en/top-10-gift-ideas-for-20-year-old-woman',
-		imageUrl:
-			'https://images.unsplash.com/photo-1496128858413-b36217c2ce36?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=3603&q=80',
+		imageUrl: '/img/top-10-gift-ideas-for-20-year-old-woman.png',
 		date: 'Mar 16, 2020',
 		datetime: '2023-03-16',
 		author: {
 			name: 'Leo K.',
 			imageUrl: 'https://i.pravatar.cc/150?img=54',
-		},
-	},
-	{
-		id: 2,
-		title: 'Boost your conversion rate',
-		href: '#',
-		imageUrl:
-			'https://images.unsplash.com/photo-1496128858413-b36217c2ce36?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=3603&q=80',
-		date: 'Mar 16, 2020',
-		datetime: '2020-03-16',
-		author: {
-			name: 'Michael Foster',
-			imageUrl:
-				'https://images.unsplash.com/photo-1519244703995-f4e0f30006d5?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=facearea&facepad=2&w=256&h=256&q=80',
-		},
-	},
-	{
-		id: 3,
-		title: 'Boost your conversion rate',
-		href: '#',
-		imageUrl:
-			'https://images.unsplash.com/photo-1496128858413-b36217c2ce36?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=3603&q=80',
-		date: 'Mar 16, 2020',
-		datetime: '2020-03-16',
-		author: {
-			name: 'Michael Foster',
-			imageUrl:
-				'https://images.unsplash.com/photo-1519244703995-f4e0f30006d5?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=facearea&facepad=2&w=256&h=256&q=80',
 		},
 	},
 	// More posts...

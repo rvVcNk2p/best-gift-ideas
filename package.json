@@ -11,6 +11,7 @@
 	},
 	"devDependencies": {
 		"@nuxt/content": "^2.5.2",
+		"@nuxt/image-edge": "^1.0.0-27968280.9739e4d",
 		"@nuxtjs/google-fonts": "^3.0.0-1",
 		"@tailwindcss/typography": "^0.5.9",
 		"autoprefixer": "^10.4.13",

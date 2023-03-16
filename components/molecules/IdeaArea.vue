@@ -52,6 +52,7 @@
 							<button
 								@click.prevent="resetForm()"
 								class="mr-4 block w-10 md:mr-0"
+								aria-label="Reset Button"
 							>
 								<ArrowPathRoundedSquareIcon
 									class="h-6 w-6"
@@ -81,7 +82,7 @@ import { useI18n } from 'vue-i18n'
 import { useField, useForm } from 'vee-validate'
 import { toFormValidator } from '@vee-validate/zod'
 import * as zod from 'zod'
-import { ArrowPathRoundedSquareIcon } from '@heroicons/vue/24/outline'
+import ArrowPathRoundedSquareIcon from '@heroicons/vue/24/outline/ArrowPathRoundedSquareIcon'
 
 const { t } = useI18n()
 

@@ -13,6 +13,8 @@ export default defineNuxtConfig({
 	modules: [
 		'@pinia/nuxt',
 		'@nuxt/content',
+		'@nuxt/image-edge',
+		'./modules/sitemap',
 		[
 			'@nuxtjs/google-fonts',
 			{
@@ -21,7 +23,6 @@ export default defineNuxtConfig({
 				},
 			},
 		],
-		'./modules/sitemap',
 	],
 	content: {
 		// https://content.nuxtjs.org/api/configuration
@@ -34,10 +35,6 @@ export default defineNuxtConfig({
 				return null
 			} else return { url: page.path }
 		},
-	},
-	routeRules: {
-		'/blog/**': { swr: true },
-		'/admin/**': { ssr: false },
 	},
 	hooks: {
 		'prerender:routes'(ctx) {

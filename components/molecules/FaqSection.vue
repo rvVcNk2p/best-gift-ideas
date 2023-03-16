@@ -44,7 +44,8 @@
 
 <script lang="ts" setup>
 import { Disclosure, DisclosureButton, DisclosurePanel } from '@headlessui/vue'
-import { MinusSmallIcon, PlusSmallIcon } from '@heroicons/vue/24/outline'
+import MinusSmallIcon from '@heroicons/vue/24/outline/MinusSmallIcon'
+import PlusSmallIcon from '@heroicons/vue/24/outline/PlusSmallIcon'
 
 import { FaqType } from '@types'
 
