@@ -34,16 +34,18 @@ serve(async (req: Request) => {
 	const { prompt } = await req.json()
 
 	const extendedPrompt = `
-		Person details: ${prompt}
 		Act as a creative gift advisor and generate cool and unique gift ideas from Amazon. 
 		Give me 8 unique gift ideas for the mentioned person. 
-		Do not repeat yourself; do not recommend multiple products from the same category. 
-		Rate the product on a 1-10 scale, depending on how good a match the product can make. 
-		Only recommand product that has min. 8 score points. 
-		Only the product name, rating and description is required, nothing else. 
-		Description need to be written as a sales text, minimum 15 words and maximum 20 words. Name maximum length is 5 words. 
+		Rules:
+		1. Do not repeat yourself; do not recommend multiple products from the same category. 
+		2. Rate the product on a 1-10 scale, depending on how good a match the product can make. 
+		3. Only recommand product that has min. 8 score points. 
+		4. Only the product name, rating and description is required, nothing else. 
+		5. Description need to be written as a sales text, between 15 and 20 words. Name maximum length is 5 words. 
 		Example output format: {{name}} || {{score}}/10 || {{description}}. 
-		Filter out course, class, online, subscription, guid, software, kit, session, mug, socks, drawing ideas. 
+		6.Regenerate idea if contains any from these words: course, class, online, subscription, guid, software, kit, session, mug, socks, experiences, drawing ideas. 
+
+		Person details: ${prompt}
 	`
 
 	console.log('== ', extendedPrompt)
@@ -72,6 +74,10 @@ serve(async (req: Request) => {
 			.replace(`${extendedPrompt}`, '')
 			.split('\n')
 			.filter((row: string) => row.trim().length > 0)
+
+		console.log('====')
+		console.log('==', trimmedResult)
+		console.log('====')
 
 		return new Response(JSON.stringify(createObj(trimmedResult)), {
 			headers: { ...corsHeaders, 'Content-Type': 'application/json' },

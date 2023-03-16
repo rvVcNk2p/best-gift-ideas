@@ -3,7 +3,7 @@ import type { NuxtPage } from '@nuxt/schema'
 import alias from './pathAliases'
 
 export default defineNuxtConfig({
-	css: ['~/assets/css/main.css'],
+	css: ['~/assets/scss/main.scss'],
 	postcss: {
 		plugins: {
 			tailwindcss: {},

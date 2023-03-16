@@ -14,7 +14,7 @@
 			</p>
 		</div>
 		<div
-			class="flex max-h-60 items-center justify-center overflow-hidden md:max-h-72 lg:max-h-96"
+			class="mt-10 flex max-h-60 items-center justify-center overflow-hidden md:max-h-72 lg:max-h-96"
 			v-if="doc.image"
 		>
 			<img preload :src="'/img/' + doc.image" />
@@ -23,7 +23,7 @@
 			class="relative z-10 min-h-[70vh] bg-white px-6 py-12 sm:mx-auto sm:-mt-12 sm:mb-12 sm:shadow-2xl md:max-w-3xl lg:max-w-4xl"
 		>
 			<ContentRenderer
-				class="prose lg:prose-lg prose-slate prose-headings:scroll-mt-20 mx-auto [&_h1>a]:no-underline [&_h2>a]:no-underline [&_h3>a]:no-underline [&_h4>a]:no-underline [&_h5>a]:no-underline [&_h6>a]:no-underline"
+				class="prose prose-slate min-w-full prose-headings:scroll-mt-20 lg:prose-lg [&_h1>a]:no-underline [&_h2>a]:no-underline [&_h3>a]:no-underline [&_h4>a]:no-underline [&_h5>a]:no-underline [&_h6>a]:no-underline"
 				:value="doc"
 			/>
 		</main>

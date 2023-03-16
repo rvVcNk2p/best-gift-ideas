@@ -79,11 +79,11 @@
 								{{ `@${featuredTestimonial.author.handle}` }}
 							</div>
 						</div>
-						<img
-							class="h-10 w-auto flex-none"
+						<!-- <img
+							class="h-20 w-auto flex-none"
 							:src="featuredTestimonial.author.logoUrl"
 							alt=""
-						/>
+						/> -->
 					</figcaption>
 				</figure>
 				<div
@@ -139,13 +139,12 @@
 
 <script lang="ts" setup>
 const featuredTestimonial = {
-	body: "I can't say enough good things about Elf Help! I've used this app for several occasions, but most recently, I used it to find the perfect birthday gift for my best friend. She's one of those people who has everything, so finding a gift that's both meaningful and useful can be a challenge.",
+	body: "I can't say enough good things about Gifty.land! I've used this app for several occasions, but most recently, I used it to find the perfect birthday gift for my best friend. She's one of those people who has everything, so finding a gift that's both meaningful and useful can be a challenge.",
 	author: {
-		name: 'Brenna Goyette',
-		handle: 'brennagoyette',
-		imageUrl:
-			'https://images.unsplash.com/photo-1550525811-e5869dd03032?ixlib=rb-=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=facearea&facepad=2&w=1024&h=1024&q=80',
-		logoUrl: 'https://tailwindui.com/img/logos/savvycal-logo-gray-900.svg',
+		name: 'Mia Singh',
+		handle: 'miasingh',
+		imageUrl: 'https://i.pravatar.cc/150?img=45',
+		logoUrl: '',
 	},
 }
 const testimonials = [
@@ -154,28 +153,25 @@ const testimonials = [
 			{
 				body: 'This year, Gifty.land made my Christmas shopping a breeze! I found unique and thoughtful gifts for everyone on my list in just a few clicks.',
 				author: {
-					name: 'Christmass Chris',
-					handle: 'lesliealexander',
-					imageUrl:
-						'https://images.unsplash.com/photo-1494790108377-be9c29b29330?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=facearea&facepad=2&w=256&h=256&q=80',
+					name: 'Ethan Carter',
+					handle: 'ethancarter',
+					imageUrl: 'https://i.pravatar.cc/150?img=53',
 				},
 			},
 			{
 				body: "I'm not the best at gift-giving, but Gifty.land made me feel like a pro this Valentine's Day. My partner was thrilled with the present I chose, and I owe it all to this app!",
 				author: {
-					name: 'Valentines Viktor',
-					handle: 'lesliealexander',
-					imageUrl:
-						'https://images.unsplash.com/photo-1494790108377-be9c29b29330?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=facearea&facepad=2&w=256&h=256&q=80',
+					name: 'David Nguyen',
+					handle: 'davidnguyen',
+					imageUrl: 'https://i.pravatar.cc/150?img=57',
 				},
 			},
 			{
 				body: 'Thanks to Gifty.land, I was able to find the perfect presents for my family and friends without stressing out. This app is a game-changer!',
 				author: {
-					name: 'Christmass Chris',
-					handle: 'lesliealexander',
-					imageUrl:
-						'https://images.unsplash.com/photo-1494790108377-be9c29b29330?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=facearea&facepad=2&w=256&h=256&q=80',
+					name: 'Sophia Lee',
+					handle: 'sophialee',
+					imageUrl: 'https://i.pravatar.cc/150?img=41',
 				},
 			},
 			// More testimonials...
@@ -184,19 +180,17 @@ const testimonials = [
 			{
 				body: "Gifty.land made my friend's birthday extra special this year. I found a unique gift that perfectly matched her interests, and she was thrilled!",
 				author: {
-					name: 'Birthday Bob',
-					handle: 'lindsaywalton',
-					imageUrl:
-						'https://images.unsplash.com/photo-1517841905240-472988babdf9?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=facearea&facepad=2&w=256&h=256&q=80',
+					name: 'Emma Rodriguez',
+					handle: 'emmarodriguez',
+					imageUrl: 'https://i.pravatar.cc/150?img=38',
 				},
 			},
 			{
 				body: 'Gifty.land helped me find the perfect wedding gift for my best friend. The app suggested unique and memorable ideas that I never would have thought of on my own.',
 				author: {
-					name: 'Wedding Victoria',
-					handle: 'lindsaywalton',
-					imageUrl:
-						'https://images.unsplash.com/photo-1517841905240-472988babdf9?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=facearea&facepad=2&w=256&h=256&q=80',
+					name: 'Oliver Martin',
+					handle: 'olivermartin',
+					imageUrl: 'https://i.pravatar.cc/150?img=68',
 				},
 			},
 			// More testimonials...
@@ -207,19 +201,17 @@ const testimonials = [
 			{
 				body: "I'm not great at gift-giving, but Gifty.land helped me choose the perfect birthday present for my sister. It was easy to use and had so many great ideas to choose from.",
 				author: {
-					name: 'Tom Cook',
-					handle: 'tomcook',
-					imageUrl:
-						'https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=facearea&facepad=2&w=256&h=256&q=80',
+					name: 'Isabella Wright',
+					handle: 'isabellawright',
+					imageUrl: 'https://i.pravatar.cc/150?img=27',
 				},
 			},
 			{
 				body: 'I used Gifty.land to find a wedding present for my cousin who has everything, and I was blown away by the variety of options available.',
 				author: {
-					name: 'Wedding Victoria',
-					handle: 'tomcook',
-					imageUrl:
-						'https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=facearea&facepad=2&w=256&h=256&q=80',
+					name: 'Daniel Patel',
+					handle: 'danielpatel',
+					imageUrl: 'https://i.pravatar.cc/150?img=56',
 				},
 			},
 			// More testimonials...
@@ -228,28 +220,25 @@ const testimonials = [
 			{
 				body: "I used Gifty.land to find a special Mother's Day gift for my mom this year, and I couldn't be happier with my choice. She loved it!",
 				author: {
-					name: 'Mothers Monica',
-					handle: 'leonardkrasner',
-					imageUrl:
-						'https://images.unsplash.com/photo-1519345182560-3f2917c472ef?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=facearea&facepad=2&w=256&h=256&q=80',
+					name: 'Ava Davis',
+					handle: 'avadavis',
+					imageUrl: 'https://i.pravatar.cc/150?img=23',
 				},
 			},
 			{
 				body: "This year, I wanted to surprise my friends with unique Valentine's Day gifts, and Gifty.land made it happen. The suggestions were spot-on, and everyone loved what I got them.",
 				author: {
-					name: 'Valentine Viktor',
-					handle: 'leonardkrasner',
-					imageUrl:
-						'https://images.unsplash.com/photo-1519345182560-3f2917c472ef?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=facearea&facepad=2&w=256&h=256&q=80',
+					name: 'Jacob Kim',
+					handle: 'jacobkim',
+					imageUrl: 'https://i.pravatar.cc/150?img=12',
 				},
 			},
 			{
-				body: "As a busy mom myself, Gifty.land was a lifesaver for finding the perfect Mother's Day presents for my own mom and mother-in-law. It made the whole process stress-free.",
+				body: "As a busy dad myself, Gifty.land was a lifesaver for finding the perfect Mother's Day presents for my own mom and mother-in-law. It made the whole process stress-free.",
 				author: {
-					name: 'Mothers Monica',
-					handle: 'leonardkrasner',
-					imageUrl:
-						'https://images.unsplash.com/photo-1519345182560-3f2917c472ef?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=facearea&facepad=2&w=256&h=256&q=80',
+					name: 'Leo Johnson',
+					handle: 'leojohnson',
+					imageUrl: 'https://i.pravatar.cc/150?img=11',
 				},
 			},
 			// More testimonials...

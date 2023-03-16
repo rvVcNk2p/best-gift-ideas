@@ -11,5 +11,6 @@ module.exports = {
 	theme: {
 		extend: {},
 	},
-	plugins: [],
+	// https://content.nuxtjs.org/v1/getting-started/displaying/#style
+	plugins: [require('@tailwindcss/typography')],
 }

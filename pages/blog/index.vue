@@ -1,15 +1,11 @@
 <template>
 	<div class="flex min-h-[calc(100vh-5rem)] flex-col items-center px-2">
 		<h1 class="my-6 text-6xl font-bold">Blog</h1>
-		<div class="my-8 text-justify">
-			<p>
-				Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut vitae
-				commodo purus. Phasellus sed nisi vel dolor volutpat luctus quis at
-				dolor.
-			</p>
-			<p>
-				Ut commodo dolor tellus. Donec dolor lectus, viverra vitae nunc eget,
-				congue suscipit nisi.
+		<div class="my-8 mb-10 text-justify">
+			<p class="text-center">
+				Get ready to find the perfect gifts for your loved ones! In the
+				following blog posts, we'll be sharing a variety of unique and
+				thoughtful gift ideas that are sure to impress.
 			</p>
 		</div>
 		<ContentList :query="query">
@@ -35,9 +31,9 @@
 							</div>
 							<div class="width-full relative aspect-video overflow-hidden p-6">
 								<h2 class="mb-4 text-xl font-medium">{{ article.title }}</h2>
-								<p class="line-clamp-3 mb-4 px-1 text-justify italic">
+								<!-- <p class="line-clamp-3 mb-4 px-1 text-justify italic">
 									{{ article.description }}
-								</p>
+								</p> -->
 								<div
 									class="absolute bottom-6 right-6 text-sm text-gray-600"
 									v-if="isValid(article.date)"

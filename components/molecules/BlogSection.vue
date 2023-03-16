@@ -3,10 +3,12 @@
 		<div class="mx-auto max-w-7xl px-6 lg:px-8">
 			<div class="mx-auto max-w-2xl text-center">
 				<h2 class="text-3xl font-bold tracking-tight text-gray-900 sm:text-4xl">
-					From the blog
+					From our blog
 				</h2>
 				<p class="mt-2 text-lg leading-8 text-gray-600">
-					Learn how to grow your business with our expert advice.
+					Get ready to find the perfect gifts for your loved ones! In the
+					following blog posts, we'll be sharing a variety of unique and
+					thoughtful gift ideas that are sure to impress.
 				</p>
 			</div>
 			<div
@@ -66,26 +68,22 @@
 const posts = [
 	{
 		id: 1,
-		title: 'Boost your conversion rate',
-		href: '#',
-		description:
-			'Illo sint voluptas. Error voluptates culpa eligendi. Hic vel totam vitae illo. Non aliquid explicabo necessitatibus unde. Sed exercitationem placeat consectetur nulla deserunt vel. Iusto corrupti dicta.',
+		title:
+			'Top 10 Gift Ideas for the Stylish and Trendy 20-Year-Old Woman in Your Life',
+		href: '/blog/en/top-10-gift-ideas-for-20-year-old-woman',
 		imageUrl:
 			'https://images.unsplash.com/photo-1496128858413-b36217c2ce36?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=3603&q=80',
 		date: 'Mar 16, 2020',
-		datetime: '2020-03-16',
+		datetime: '2023-03-16',
 		author: {
-			name: 'Michael Foster',
-			imageUrl:
-				'https://images.unsplash.com/photo-1519244703995-f4e0f30006d5?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=facearea&facepad=2&w=256&h=256&q=80',
+			name: 'Leo K.',
+			imageUrl: 'https://i.pravatar.cc/150?img=54',
 		},
 	},
 	{
 		id: 2,
 		title: 'Boost your conversion rate',
 		href: '#',
-		description:
-			'Illo sint voluptas. Error voluptates culpa eligendi. Hic vel totam vitae illo. Non aliquid explicabo necessitatibus unde. Sed exercitationem placeat consectetur nulla deserunt vel. Iusto corrupti dicta.',
 		imageUrl:
 			'https://images.unsplash.com/photo-1496128858413-b36217c2ce36?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=3603&q=80',
 		date: 'Mar 16, 2020',
@@ -100,8 +98,6 @@ const posts = [
 		id: 3,
 		title: 'Boost your conversion rate',
 		href: '#',
-		description:
-			'Illo sint voluptas. Error voluptates culpa eligendi. Hic vel totam vitae illo. Non aliquid explicabo necessitatibus unde. Sed exercitationem placeat consectetur nulla deserunt vel. Iusto corrupti dicta.',
 		imageUrl:
 			'https://images.unsplash.com/photo-1496128858413-b36217c2ce36?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=3603&q=80',
 		date: 'Mar 16, 2020',

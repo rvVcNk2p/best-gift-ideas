@@ -36,7 +36,7 @@
 							v-model="additionalInformation"
 							title="Add additional information goes here:"
 							name="additionalInformation"
-							placeholder="e.g. Matt is 20-year-old who likes programming and hiking and is very energetic. Provide more information for a better suggestion."
+							:placeholder="placeholderText"
 							:class="{
 								'is-invalid': !!errors.additionalInformation,
 								'is-valid':
@@ -86,6 +86,9 @@ import { ArrowPathRoundedSquareIcon } from '@heroicons/vue/24/outline'
 const { t } = useI18n()
 
 const emits = defineEmits(['generate-ideas'])
+
+const placeholderText: string =
+	'e.g. 20-year-old who likes jewelry and make-up and is very energetic'
 
 const prompt = computed<string>(() => {
 	let innerPrompt = `Is a ${fixedFormData.gender.label}. The ocasion why I need a gigt idea: ${fixedFormData.occasion.label}.`
