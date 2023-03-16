@@ -10,6 +10,11 @@ export default defineNuxtConfig({
 			autoprefixer: {},
 		},
 	},
+	// https://answers.netlify.com/t/nuxt-image-doesnt-show-up-after-deploy/46480/12
+	// Deploying with netlify CLI
+	// Step 1. - npm run generate && netlify deploy --prod -d .output/public/
+	// BEWARE: Turn off auto publishing after successful deployment.
+	// https://app.netlify.com/sites/spectacular-speculoos-0531d7/deploys
 	modules: [
 		'@pinia/nuxt',
 		'@nuxt/content',
