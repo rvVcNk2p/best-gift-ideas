@@ -41,7 +41,7 @@ serve(async (req: Request) => {
 		2. Rate the product on a 1-10 scale, depending on how good a match the product can make. 
 		3. Only recommand product that has min. 8 score points. 
 		4. Only the product name, rating and description is required, nothing else. 
-		5. Description need to be written as a sales text, between 15 and 20 words. Name maximum length is 5 words. 
+		5. Description need to be written as a sales text, between 15 and 20 words. Name maximum length is 4 words. 
 		Example output format: {{name}} || {{score}}/10 || {{description}}. 
 		6.Regenerate idea if contains any from these words: course, class, online, subscription, guid, software, kit, session, mug, socks, experiences, drawing ideas. 
 

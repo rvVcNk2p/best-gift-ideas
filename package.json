@@ -4,6 +4,7 @@
 		"build": "nuxt build",
 		"dev": "nuxt dev",
 		"generate": "nuxt generate",
+		"netlify:publish": "nuxt generate --dotenv .env.production && netlify deploy --prod -d .output/public/",
 		"preview": "nuxt preview",
 		"postinstall": "nuxt prepare",
 		"format": "prettier --check \"./**/*.{js,jsx,ts,tsx,css,scss,styl,json,md,vue}\"",

@@ -12,7 +12,8 @@ export default defineNuxtConfig({
 	},
 	// https://answers.netlify.com/t/nuxt-image-doesnt-show-up-after-deploy/46480/12
 	// Deploying with netlify CLI
-	// Step 1. - npm run generate && netlify deploy --prod -d .output/public/
+	// Step 0. Set environment variables in .env.production - OPENAI_ORGANIZATION/OPENAI_API/NUXT_PUBLIC_ENVIRONMENT/NUXT_PUBLIC_BEARER_TOKEN
+	// Step 1. - npm run netlify:publish
 	// BEWARE: Turn off auto publishing after successful deployment.
 	// https://app.netlify.com/sites/spectacular-speculoos-0531d7/deploys
 	modules: [
