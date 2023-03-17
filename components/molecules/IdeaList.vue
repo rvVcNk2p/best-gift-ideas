@@ -68,7 +68,7 @@ defineProps<{ generatedIdeas: Idea[] }>()
 const generateAmazonLink = (name: string) =>
 	`https://www.amazon.com/s?k=${name
 		.replace(/^\d+\.\s*/, '') // remone number + dot from start
-		.replaceAll(' ', '+')}`
+		.replaceAll(' ', '+')}&tag=giftyland05-20`
 
 const isValidIdea = (idea: Idea) => idea.description ?? idea.name ?? idea.rating
 </script>
