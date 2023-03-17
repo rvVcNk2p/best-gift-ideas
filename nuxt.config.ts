@@ -20,7 +20,6 @@ export default defineNuxtConfig({
 		'@pinia/nuxt',
 		'@nuxt/content',
 		'@nuxt/image-edge',
-		'nuxt-gtag',
 		'./modules/sitemap',
 		[
 			'@nuxtjs/google-fonts',
@@ -31,9 +30,6 @@ export default defineNuxtConfig({
 			},
 		],
 	],
-	gtag: {
-		id: 'G-2FWW316D6P',
-	},
 	content: {
 		// https://content.nuxtjs.org/api/configuration
 	},
