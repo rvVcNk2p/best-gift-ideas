@@ -3,7 +3,7 @@ import { transformBlogPath } from '@libs/string'
 
 const pageName = (path: string) => {
 	if (path === '/') return 'Gifty.land | Home'
-	if (path === '/blog') return 'Gifty.land | Blog'
+	else if (path === '/blog') return 'Gifty.land | Blog'
 	else if (path.includes('/blog/')) return transformBlogPath(path)
 	else return `${path}`
 }
