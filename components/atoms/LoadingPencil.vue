@@ -27,7 +27,6 @@ onMounted(() => animateLoading())
 
 onBeforeUnmount(() => {
 	if (setIntervalId.value) {
-		console.log('====', setIntervalId.value)
 		window.clearInterval(setIntervalId.value)
 	}
 })

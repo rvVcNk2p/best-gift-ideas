@@ -76,16 +76,26 @@ import { useGetIdeas } from '@composables'
 import type { Idea } from '@types'
 import { useFaqs } from '@composables'
 import type { Ref } from 'vue'
+import { useGtag } from 'vue-gtag-next'
 
 const { fetchIdeas } = useGetIdeas()
 const { setIsLoading } = useFetchStore()
 const { faqs } = useFaqs()
+const { event } = useGtag()
 
 const generatedIdeas: Ref<Idea[]> = ref([])
+
+const trackCustomEvent = () => {
+	event('find_button_clicked', {
+		event_category: 'custom',
+		event_label: 'find_button_clicked',
+	})
+}
 
 const generateIdeas = async (prompt: string) => {
 	setIsLoading(true)
 	generatedIdeas.value = []
+	trackCustomEvent()
 	try {
 		generatedIdeas.value = await fetchIdeas(prompt)
 	} catch (error) {
