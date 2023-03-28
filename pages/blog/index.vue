@@ -13,6 +13,16 @@
 				<p>No article yet.</p>
 			</template>
 			<template v-slot="{ list }">
+				<div class="mb-10 flex gap-4">
+					<p
+						v-for="tag in tags(list)"
+						class="tag"
+						:class="{ 'is-selected': tag === selectedTags }"
+						@click="setSelectedTag(tag)"
+					>
+						{{ tag }}
+					</p>
+				</div>
 				<div class="grid grid-cols-1 gap-8 lg:grid-cols-2 2xl:grid-cols-3">
 					<div
 						v-for="article in list"
@@ -60,7 +70,7 @@
 	</div>
 </template>
 
-<script setup>
+<script setup lang="ts">
 import {
 	formatDateFromNow,
 	formatDateAbsolute,
@@ -71,12 +81,32 @@ definePageMeta({
 	layout: 'blog',
 })
 
-const query = {
+const tags = (list: any) => {
+	return list
+		.reduce((acc: string[], nextVal: any) => {
+			acc = [...acc, ...nextVal.tags]
+			return [...new Set(acc)]
+		}, [])
+		.sort()
+}
+
+const selectedTags = ref('')
+
+const setSelectedTag = (tag: string) => {
+	selectedTags.value === tag
+		? (selectedTags.value = '')
+		: (selectedTags.value = tag)
+}
+
+const query = computed(() => ({
 	path: '/',
 	limit: 10,
 	sort: { date: -1 },
-	where: process.env.NODE_ENV === 'development' ? {} : { draft: { $ne: true } },
-}
+	where:
+		process.env.NODE_ENV === 'development'
+			? { tags: { $contains: selectedTags.value } }
+			: { tags: { $contains: selectedTags.value }, draft: { $ne: true } },
+}))
 
 useHead({
 	title: 'Gifty.land | Blog',
@@ -91,3 +121,14 @@ useHead({
 	],
 })
 </script>
+
+<style scoped lang="scss">
+.tag {
+	@apply cursor-pointer rounded-md border border-[#4e46e5] bg-white p-2 text-[#4e46e5];
+	@apply hover:bg-[#4e46e5] hover:text-white;
+
+	&.is-selected {
+		@apply bg-[#4e46e5] text-white;
+	}
+}
+</style>
