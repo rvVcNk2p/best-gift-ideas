@@ -38,7 +38,9 @@
 						/>
 					</div>
 					<div class="width-full relative aspect-video overflow-hidden p-6">
-						<h2 class="mb-4 text-xl font-medium">{{ article.title }}</h2>
+						<h2 class="mb-4 text-xl font-medium xl:truncate">
+							{{ article.title }}
+						</h2>
 						<!-- <p class="line-clamp-3 mb-4 px-1 text-justify italic">
 									{{ article.description }}
 								</p> -->
