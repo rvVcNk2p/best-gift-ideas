@@ -9,7 +9,7 @@
 			</p>
 		</div>
 
-		<div class="mb-10 flex gap-4">
+		<div class="mb-10 flex flex-wrap gap-4">
 			<p
 				v-for="tag in tags(data)"
 				class="tag"
